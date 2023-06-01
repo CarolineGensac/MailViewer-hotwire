@@ -1,0 +1,26 @@
+<h1>Emails#index</h1>
+
+  <%= turbo_frame_tag "create" do %>
+    <ul id = "email-list">
+      <% @emails.each do |email| %>
+        <%= render 'email', email: email %>
+      <% end %>
+    </ul>
+  <% end %>
+
+<h2> Envoyer un mail </h2>
+
+  <%= button_to "send quote", emails_path, data: { turbo_frame: "create" } %>
+
+
+<%# <div class="form"> %>
+  <%# <%= form_tag(emails_path, method: :post, class: "form") do %> 
+    <%# <label for="object"> Object %>
+    <%# <%= text_field_tag  :object %> 
+<%# 
+    <label for="body">Body %>
+    <%# <%= text_field_tag  :body %> 
+
+    <%# <%= submit_tag 'create', :name => 'commit', data: {turbo_frame: "create"} %> 
+  <%# <% end %> 
+<%# </div> %>
